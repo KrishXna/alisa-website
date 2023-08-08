@@ -1,15 +1,15 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import HeroImg from "../../../assets/image 1.png";
+import HeroImg from "../../../assets/image1.png";
 import CoupleImg from "../../../assets/curosalImg.png";
-import GroupImg from "../../../assets/Group 53.png";
-import Ladies from "../../../assets/Rectangle 7.png";
-import Image2 from "../../../assets/image 2.png";
-import Image3 from "../../../assets/image 3.png";
-import Image4 from "../../../assets/image 4 (1).png";
-import Image5 from "../../../assets/image 5.png";
-import Image6 from "../../../assets/image 6.png";
+import GroupImg from "../../../assets/Group53.png";
+import Ladies from "../../../assets/Rectangle7.png";
+import Image2 from "../../../assets/image2.png";
+import Image3 from "../../../assets/image3.png";
+import Image4 from "../../../assets/image4(1).png";
+import Image5 from "../../../assets/image5.png";
+import Image6 from "../../../assets/image6.png";
 
 const index = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,7 +25,11 @@ const index = () => {
         <div className="w-full p-10 text-xl text-white z-10 relative font-cinzel">
           <div className="flex gap-x-4">
             <div className="w-6 text-white cursor-pointer">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+                fill="white"
+              >
                 <path
                   d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
                   onClick={handleMenu}
