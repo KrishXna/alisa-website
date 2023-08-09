@@ -88,6 +88,7 @@ const index = () => {
               </p>
             </div>
             <Image src={HeroImg} alt="hero-img" className="w-full relative" />
+            {/* </div> */}
           </div>
           <div className="w-full absolute -top-28 inset-0 bg-[#38363699] stop-pointer"></div>
         </div>
@@ -103,7 +104,9 @@ const index = () => {
           <h2 className="text-center uppercase text-4xl md:text-6xl mt-10 md:mt-16 mb-10 py-4 font-cinzel">
             Portfolio
           </h2>
-          <Image src={CoupleImg} alt="curosal-image" />
+          <div className="flex justify-center items-center">
+            <Image src={CoupleImg} alt="curosal-image" />
+          </div>
         </div>
         <div className="mt-10 lg:mt-28">
           <Image src={GroupImg} alt="group-image" className="w-full" />
