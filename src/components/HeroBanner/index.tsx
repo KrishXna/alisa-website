@@ -44,7 +44,9 @@ const index = () => {
           </div>
           {menuOpen && (
             <div
-              className={`fixed inset-0 h-screen left-0 top-0 bg-[#000] w-[300px] overflow-hidden`}
+              className={`fixed inset-0 h-screen left-0 top-0 bg-[#000] ${
+                menuOpen ? "lg:w-[300px]" : ""
+              } overflow-hidden`}
             >
               <div className="flex justify-center items-center h-[100vh]">
                 <ul className="uppercase">
