@@ -15,7 +15,7 @@ const index = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const handleMenu = (prev: any) => {
     if (prev) {
-      setMenuOpen(!prev);
+      setMenuOpen((prev) => !prev);
       console.log("clicked");
     }
   };
@@ -24,25 +24,60 @@ const index = () => {
       <div className="w-full bg-[#38363699]">
         <div className="w-full p-10 text-xl text-white z-10 relative font-cinzel">
           <div className="flex gap-x-4">
-            <div className="w-6 text-white cursor-pointer">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 448 512"
-                fill="white"
-              >
-                <path
-                  d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
-                  onClick={handleMenu}
-                />
-              </svg>
-            </div>
+            <button
+              className="w-6 text-white cursor-pointer relative z-20"
+              onClick={handleMenu}
+            >
+              {menuOpen ? (
+                <div className="fixed">X</div>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  fill="white"
+                >
+                  <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+                </svg>
+              )}
+            </button>
             <span>Menu</span>
           </div>
-          {/* <div className="border border-red-500 w-1/4 h-[400px] mt-10"></div> */}
+          {menuOpen && (
+            <div
+              className={`fixed inset-0 h-screen left-0 top-0 bg-[rgba(0,0,0,0.65)] w-[300px] overflow-hidden`}
+            >
+              <div className="flex justify-center items-center h-[100vh]">
+                <ul className="uppercase">
+                  <li className="mt-4 hover:bg-[#38363699] px-10 py-2 rounded">
+                    Home
+                  </li>
+                  <li className="mt-4 hover:bg-[#38363699] px-10 py-2 rounded">
+                    Portfolio
+                  </li>
+                  <li className="mt-4 hover:bg-[#38363699] px-10 py-2 rounded">
+                    About
+                  </li>
+                  <li className="mt-4 hover:bg-[#38363699] px-10 py-2 rounded">
+                    Blog
+                  </li>
+                  <li className="mt-4 hover:bg-[#38363699] px-10 py-2 rounded">
+                    Contact
+                  </li>
+                  <li className="mt-4 hover:bg-[#38363699] px-10 py-2 rounded">
+                    Instagram
+                  </li>
+                </ul>
+              </div>
+            </div>
+          )}
         </div>
-        <div className="relative">
+        <div className="relative lg:pb-12">
           <div className="w-full pt-8 sm:pt-16 lg:pt-20 relative">
-            <div className="absolute z-20 text-white -top-4 sm:top-0 sm:pt-1 md:top-20 md:pt-2 text-center w-full font-cinzel">
+            <div
+              className={`absolute ${
+                menuOpen ? "z-0" : "z-20"
+              } text-white -top-4 sm:top-0 sm:pt-1 md:top-20 md:pt-2 text-center w-full font-cinzel`}
+            >
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl">
                 Alisa Ferris
               </h1>
@@ -50,11 +85,7 @@ const index = () => {
                 Miami Wedding Photographer
               </p>
             </div>
-            <Image
-              src={HeroImg}
-              alt="hero-img"
-              className="h-[px] w-full relative"
-            />
+            <Image src={HeroImg} alt="hero-img" className="w-full relative" />
           </div>
           <div className="w-full absolute -top-28 inset-0 bg-[#38363699] stop-pointer"></div>
         </div>
